@@ -1,0 +1,20 @@
+.LoginBoxOuter{
+    display: flex;
+    align-self: center;
+    background-color: red;
+    width: 50%;
+    margin-top: 35vh;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30vh;
+}
+.LoginBoxOuterRight{
+    justify-content: flex-end;
+    background-color: yellow;
+    width:50%;
+}
+.LoginBoxOuterLeft{
+    justify-content: flex-start;
+    background-color: lightblue;
+    width:50%;
+}
