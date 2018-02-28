@@ -11,24 +11,6 @@ class QuizDeck extends React.Component{
     }; 
   }
 
-//  componentWillMount(){
-//     axios.get('/fetchData')
-//     .then((response)=>{ 
-//        const newresponse=response.data;
-//     //    console.log("here");
-//     //     console.log(newresponse);
-//        return newresponse;
-//     }).then((data)=>{
-//         this.setState({
-//             quesOptionList:data,
-//         });
-//     })
-//     .catch(function (error) {
-//       console.log(error);
-//     });
-//  } 
-
-
 render() {
 
 const OptionList = this.props.options;
@@ -40,6 +22,7 @@ const oList = OptionList.map((step, index) => (
         type="radio" 
         name="gender" 
         value={step}
+        onChange={(event)=>this.props.onRadioClick(event,this.props.quesid,this.props.usrnm)}
     />
     <label for="my_id">{step}</label>
     </p>

@@ -29,6 +29,25 @@ class QuizPlatform extends React.Component{
     });
  } 
 
+//  goToSetState=()=>{
+//     this.setState({
+//         pageNo:1,
+//     });
+  
+//   }
+
+
+
+ onRadioClick=(event,quesidarg,usrnmarg)=>{
+     console.log(event.target.value);
+      axios.post('/updateOption', {
+        username: usrnmarg,
+        quesid:quesidarg,
+        selectedOption:event.target.value,
+      })
+      .then((respo)=>console.log(respo));
+    }
+ 
 
 render() {
 
@@ -42,6 +61,7 @@ const qoList = quesOptionList.map((step, index) => (
           answer={step.answer}
           options={step.options}
           usrnm={this.props.usrnm}
+          onRadioClick={(event)=>this.onRadioClick(event,step.quesid,this.props.usrnm)}
         />
       </li>
     ));
