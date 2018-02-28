@@ -1,4 +1,30 @@
 .LeaderBox{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    margin-right:30%;
+    margin:auto;
+ 
+}
+.againbtn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.txt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:2em;
+   
+}
+.elementlist{
+    background-color: deepskyblue;
+    margin:1.5em;
+    padding:1.5em;
 }

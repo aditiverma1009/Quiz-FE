@@ -31,7 +31,7 @@ class LoginBox extends React.Component {
     console.log(leadlist);
     const lList = leadlist.map(step => (
 
-      <div>
+      <div className="elementlist">
         {step.username}
         {step.score}
       </div>
@@ -41,10 +41,10 @@ class LoginBox extends React.Component {
 
     return (
       <div className="LeaderBox" >
-        <div className="urscore" />
-        <div>Leaderboard</div>
-        <div>{lList}</div>
-        <div><button type="submit" value="submit">Play Again</button></div>
+        <div className="urscore">score</div>
+        <div className="txt">Leaderboard</div>
+        <div className="list">{lList}</div>
+        <div><button className="againbtn" type="submit" value="submit">Play Again</button></div>
       </div>
     );
   }// render close
@@ -53,6 +53,5 @@ class LoginBox extends React.Component {
 export default LoginBox;
 
 LoginBox.propTypes = {
-  usernameSet: PropTypes.func.isRequired,
-  setUserScore: PropTypes.func.isRequired,
+
 };

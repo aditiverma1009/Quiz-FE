@@ -37,6 +37,12 @@ class App extends React.Component{
   }
 
 
+  onSubmitQuiz=()=> {
+    this.setState({
+      pageNo:2,
+    })
+  }
+
   setUserScore=()=>{
   axios.post('/setUserScore', {
     username: this.state.username,
@@ -55,14 +61,15 @@ class App extends React.Component{
 render() {
   return(<div className="mainApp">
     <NavBar page={this.state.pageNo} usrnm={this.state.username}/>
-    <div className="boss">
+   
     <Container 
       page={this.state.pageNo}
       usernameSet={(event)=>this.usernameSet(event)}
       setUserScore={()=>this.setUserScore()}
       usrnm={this.state.username}
+      onSubmitQuiz={()=>this.onSubmitQuiz()}
       />
-      </div>
+     
     </div>
   );
 }

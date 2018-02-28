@@ -36,7 +36,9 @@ class Container extends React.Component {
             setUserScore={() => this.props.setUserScore()}
             usrnm={this.props.usrnm}
           />
-          <div className="btncontainer"><button type="submit" value="Submit" className="QuesDeckBtn" onClick={() => this.onSubmitQuiz()}>Submit</button></div>
+          <div className="btncontainer">
+            <button type="submit" value="Submit" className="QuesDeckBtn" onClick={() => this.props.onSubmitQuiz()}>Submit</button>
+          </div>
         </div>
       );
     } else if (this.props.page === 2) {
