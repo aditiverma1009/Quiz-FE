@@ -23,9 +23,9 @@ class LoginBox extends React.Component {
           <h4 className="LoginBoxOuterRightLogin">Login</h4>
           <p className="LoginBoxOuterRightUsername">Username</p>
           <input className="LoginBoxOuterRightInput" type="text" onChange={event => this.props.usernameSet(event)} />
-          <div>
-            <button className="loginbtn" onClick={() => this.props.setUserScore()}>Login</button>
-          </div>
+
+          <button className="loginbtn" onClick={() => this.props.setUserScore()}>Login</button>
+
         </div>
       </div>
     );

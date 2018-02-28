@@ -66,12 +66,14 @@ class QuizDeck extends React.Component {
     ));
 
     return (
+        <div className="qdouter">
       <div className="QuizDeck">
-        <div>{this.props.quesid}</div>
-        <div>{this.props.ques}</div>
-        <div>{this.props.answer}</div>
-        <div><form>{oList}</form></div>
-        <div>{this.props.usrnm}</div>
+        <div className="QuizDeck1">Question {this.props.quesid} :</div>
+        <div className="QuizDeck2">{this.props.ques}</div>
+        {/* <div>{this.props.answer}</div> */}
+        <div className="QuizDeck3"><form>{oList}</form></div>
+        {/* <div>{this.props.usrnm}</div> */}
+      </div>
       </div>
     );
   }// render close

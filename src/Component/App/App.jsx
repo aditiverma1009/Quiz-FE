@@ -13,7 +13,7 @@ class App extends React.Component{
     }; 
   }
 
-// dataToDb=()=>{
+// importdatatodb=()=>{
 //   axios.post('/postQuesIntoDb', {
    
 //   })
@@ -55,12 +55,14 @@ class App extends React.Component{
 render() {
   return(<div className="mainApp">
     <NavBar page={this.state.pageNo} usrnm={this.state.username}/>
+    <div className="boss">
     <Container 
       page={this.state.pageNo}
       usernameSet={(event)=>this.usernameSet(event)}
       setUserScore={()=>this.setUserScore()}
       usrnm={this.state.username}
       />
+      </div>
     </div>
   );
 }

@@ -1,3 +1,19 @@
 .login{
     height:100%;
+    background-color:;
+}
+
+.QuesDeckBtn{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+align-self: center;
+    padding-right: 5em;
+    padding-left: 5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-radius: 8px;
+    margin-top: 3vh;
+    border: 1px solid black;
+    margin-left: 40%;
 }

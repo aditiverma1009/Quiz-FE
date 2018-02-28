@@ -10,7 +10,7 @@ const NavBar = props => (
     <div className="logo">
          Quizzy
     </div>
-    <div className={props.page === 0 ? 'normal' : 'alert'}>
+    <div className={props.page === 0 ? 'normal' : 'alert'}> Welcome
       {props.usrnm}
     </div>
   </div>

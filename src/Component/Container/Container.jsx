@@ -4,6 +4,7 @@ import './Container.css';
 import LoginBox from '../LoginBox/LoginBox';
 import QuizPlatform from '../QuizPlatform/QuizPlatform';
 
+import Leader from '../Leader/Leader';
 
 class Container extends React.Component {
   constructor() {
@@ -18,12 +19,14 @@ class Container extends React.Component {
     console.log();
     if (this.props.page === 0) {
       return (
+
         <div className="login">
           <LoginBox
             usernameSet={event => this.props.usernameSet(event)}
             setUserScore={() => this.props.setUserScore()}
           />
         </div>
+
       );
     } else if (this.props.page === 1) {
       return (
@@ -33,13 +36,13 @@ class Container extends React.Component {
             setUserScore={() => this.props.setUserScore()}
             usrnm={this.props.usrnm}
           />
-          <div><button type="submit" value="Submit" className="QuesDeckBtn" onClick={() => this.onSubmitQuiz()}>Submit</button></div>
+          <div className="btncontainer"><button type="submit" value="Submit" className="QuesDeckBtn" onClick={() => this.onSubmitQuiz()}>Submit</button></div>
         </div>
       );
     } else if (this.props.page === 2) {
       return (
-        <div>
-           hi
+        <div className="leader">
+          <Leader />
         </div>
       );
     }

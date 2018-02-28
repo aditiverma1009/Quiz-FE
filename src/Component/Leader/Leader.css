@@ -1,0 +1,4 @@
+.LeaderBox{
+    display: flex;
+    flex-direction: column;
+}
