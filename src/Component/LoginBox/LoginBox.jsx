@@ -1,37 +1,16 @@
 import React from 'react';
-import axios from 'axios';
 import './LoginBox.css';
+import PropTypes from 'prop-types';
 
 class LoginBox extends React.Component{ 
     constructor() {
     super();
     this.state = {
-     username:'',
+    
     }; 
   }
 
-  usernameSet=(event)=>{
-    const usrnm=event.target.value;
-    this.setState({
-        username:usrnm,
-    });
-  }
-
-  setUserScore=()=>{
-  axios.post('/setUserScore', {
-    username: this.state.username,
-    score: 0,
-  })
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-}
-
 render() {
-    console.log("usern"+this.state.username);
    return(
        <div className="LoginBoxOuter">
            <div className="LoginBoxOuterLeft">
@@ -42,8 +21,8 @@ render() {
            <div className="LoginBoxOuterRight">
            <h4 className="LoginBoxOuterRightLogin">Login</h4>
            <p className="LoginBoxOuterRightUsername">Username</p>
-           <input className="LoginBoxOuterRightInput" type="text" onChange={(event)=>this.usernameSet(event)}/>
-           <button className="LoginBoxOuterRightUsername" onClick={this.setUserScore()}>Login</button>
+           <input className="LoginBoxOuterRightInput" type="text" onChange={(event)=>this.props.usernameSet(event)}/>
+           <button className="LoginBoxOuterRightUsername" onClick={()=>this.props.setUserScore()}>Login</button>
            </div>
         </div>
    );
@@ -52,3 +31,7 @@ render() {
 
 export default LoginBox;
 
+LoginBox.propTypes = {
+  usernameSet: PropTypes.func.isRequired,
+  setUserScore: PropTypes.func.isRequired,
+};

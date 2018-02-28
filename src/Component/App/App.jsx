@@ -1,5 +1,5 @@
 import React from 'react';
-
+import axios from 'axios';
 import './App.css';
 import NavBar from '../NavBar/NavBar';
 import Container from '../Container/Container';
@@ -9,13 +9,43 @@ class App extends React.Component{
     super();
     this.state = {
       pageNo:0,
+      username:'',
     }; 
   }
 
+
+  usernameSet=(event)=>{
+    const usrnm=event.target.value;
+    this.setState({
+        username:usrnm,
+    });
+  }
+
+  goToSetState=()=>{
+    this.setState({
+        pageNo:1,
+    });
+  
+  }
+
+
+  setUserScore=()=>{
+  axios.post('/setUserScore', {
+    username: this.state.username,
+    score: 0,
+  })
+  .then(()=>this.goToSetState());
+}
+
 render() {
   return(<div>
-    <NavBar page={this.state.pageNo}/>
-    <Container page={this.state.pageNo}/>
+    <NavBar page={this.state.pageNo} usrnm={this.state.username}/>
+    <Container 
+      page={this.state.pageNo}
+      usernameSet={(event)=>this.usernameSet(event)}
+      setUserScore={()=>this.setUserScore()}
+      usrnm={this.state.username}
+      />
     </div>
   );
 }

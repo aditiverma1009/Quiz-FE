@@ -1,6 +1,8 @@
 .normal{
-   display:none
+   display:none;
+   background-color:lightpink;
 }
 .alert{
     display:block;
+    background-color:lightpink;
 }

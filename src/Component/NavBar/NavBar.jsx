@@ -12,8 +12,8 @@ const NavBar=(props)=>{
         <div>
          Quizzy
         </div>
-        <div className={props.page?"alert":"normal"}>
-          fetchUserName
+        <div className={props.page===0?"normal":"alert"}>
+          {props.usrnm}
         </div>
      </div>
   );
