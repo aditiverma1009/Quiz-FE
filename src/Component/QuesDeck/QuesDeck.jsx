@@ -21,7 +21,7 @@ class QuizDeck extends React.Component {
     })
       .then((selectedOp) => {
         const newres = selectedOp.data;
-        console.log('hi');
+        // console.log('hi');
         return newres;
       })
       .then((data) => {
@@ -61,7 +61,7 @@ class QuizDeck extends React.Component {
           onChange={(event)=>this.onRadioClick(step,this.props.quesid,this.props.usrnm)}
           checked={(this.state.selected === step ? "checked":console.log("no"))}
         />
-        <p className="my_id">{step}</p>
+        <span className="my_id">{step}</span>
       </p>
     ));
 

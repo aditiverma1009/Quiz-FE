@@ -12,6 +12,7 @@ class QuizPlatform extends React.Component {
     };
   }
 
+
   componentWillMount() {
     axios.get('/fetchData')
       .then((response) => {
@@ -24,17 +25,34 @@ class QuizPlatform extends React.Component {
           quesOptionList: data,
         });
       })
+      .then(() => {
+        if (this.state.quesOptionList.length === 0) {
+          this.dataToDb();
+        } else {
+          console.log('full');
+        }
+      })
+
       .catch((error) => {
         console.log(error);
       });
   }
 
 
+  dataToDb=()=>{
+    axios.post('/postQuesIntoDb', {
+
+    })
+    .then(()=> axios.post('/postOptionsIntoDb', {
+
+    }));
+  }
+
   render() {
     const quesOptionList = this.state.quesOptionList;
     console.log(quesOptionList);
     const qoList = quesOptionList.map((step, index) => (
-      <li key={step.quesid} on>
+      
         <QuesDeck
           quesid={step.quesid}
           ques={step.ques}
@@ -42,12 +60,14 @@ class QuizPlatform extends React.Component {
           options={step.options}
           usrnm={this.props.usrnm}
         />
-      </li>
+     
+
     ));
 
     return (
       <div className="QuizPlatformOuter">
         {qoList}
+
       </div>
     );
   }// render close

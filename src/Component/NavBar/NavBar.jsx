@@ -7,7 +7,7 @@ import './NavBar.css';
 
 const NavBar = props => (
   <div className="NavBar-Bar">
-    <div>
+    <div className="logo">
          Quizzy
     </div>
     <div className={props.page === 0 ? 'normal' : 'alert'}>

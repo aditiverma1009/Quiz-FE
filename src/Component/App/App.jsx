@@ -13,6 +13,14 @@ class App extends React.Component{
     }; 
   }
 
+// dataToDb=()=>{
+//   axios.post('/postQuesIntoDb', {
+   
+//   })
+//   .then(()=> axios.post('/postOptionsIntoDb', {
+   
+//   })); 
+// }
 
   usernameSet=(event)=>{
     const usrnm=event.target.value;
@@ -35,10 +43,17 @@ class App extends React.Component{
     score: 0,
   })
   .then(()=>this.goToSetState());
+  // .then(()=> axios.post('/postQuesIntoDb', {
+   
+  // }))
+  // .then(()=> axios.post('/postOptionsIntoDb', {
+   
+  // })); 
+  
 }
 
 render() {
-  return(<div>
+  return(<div className="mainApp">
     <NavBar page={this.state.pageNo} usrnm={this.state.username}/>
     <Container 
       page={this.state.pageNo}
