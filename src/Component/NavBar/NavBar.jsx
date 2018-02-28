@@ -2,22 +2,19 @@ import React from 'react';
 
 import './NavBar.css';
 
-//fetch username
+// fetch username
 
 
-const NavBar=(props)=>{
-
-  return(
-      <div className="NavBar-Bar">
-        <div>
+const NavBar = props => (
+  <div className="NavBar-Bar">
+    <div>
          Quizzy
-        </div>
-        <div className={props.page===0?"normal":"alert"}>
-          {props.usrnm}
-        </div>
-     </div>
-  );
-}
+    </div>
+    <div className={props.page === 0 ? 'normal' : 'alert'}>
+      {props.usrnm}
+    </div>
+  </div>
+);
 
 
 export default NavBar;

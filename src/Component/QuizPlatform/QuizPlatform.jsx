@@ -4,75 +4,54 @@ import './QuizPlatform.css';
 import PropTypes from 'prop-types';
 import QuesDeck from '../QuesDeck/QuesDeck';
 
-class QuizPlatform extends React.Component{ 
-    constructor() {
+class QuizPlatform extends React.Component {
+  constructor() {
     super();
     this.state = {
-        quesOptionList:[],
-    }; 
+      quesOptionList: [],
+    };
   }
 
- componentWillMount(){
+  componentWillMount() {
     axios.get('/fetchData')
-    .then((response)=>{ 
-       const newresponse=response.data;
-    //    console.log("here");
-    //     console.log(newresponse);
-       return newresponse;
-    }).then((data)=>{
+      .then((response) => {
+        const newresponse = response.data;
+        //    console.log("here");
+        //     console.log(newresponse);
+        return newresponse;
+      }).then((data) => {
         this.setState({
-            quesOptionList:data,
+          quesOptionList: data,
         });
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
- } 
-
-//  goToSetState=()=>{
-//     this.setState({
-//         pageNo:1,
-//     });
-  
-//   }
-
-
-
- onRadioClick=(event,quesidarg,usrnmarg)=>{
-     console.log(event.target.value);
-      axios.post('/updateOption', {
-        username: usrnmarg,
-        quesid:quesidarg,
-        selectedOption:event.target.value,
       })
-      .then((respo)=>console.log(respo));
-    }
- 
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
-render() {
 
-const quesOptionList = this.state.quesOptionList;
-console.log(quesOptionList);
-const qoList = quesOptionList.map((step, index) => (
-      <li key={step.quesid}>
+  render() {
+    const quesOptionList = this.state.quesOptionList;
+    console.log(quesOptionList);
+    const qoList = quesOptionList.map((step, index) => (
+      <li key={step.quesid} on>
         <QuesDeck
           quesid={step.quesid}
           ques={step.ques}
           answer={step.answer}
           options={step.options}
           usrnm={this.props.usrnm}
-          onRadioClick={(event)=>this.onRadioClick(event,step.quesid,this.props.usrnm)}
         />
       </li>
     ));
 
-   return(
-       <div className="QuizPlatformOuter">
-          {qoList}
-        </div>
-   );
-}//render close
-}//class close
+    return (
+      <div className="QuizPlatformOuter">
+        {qoList}
+      </div>
+    );
+  }// render close
+}// class close
 
 export default QuizPlatform;
 
